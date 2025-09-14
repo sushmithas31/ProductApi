@@ -82,7 +82,6 @@ public class ProductRepository : GenericRepository<Product>, IProductRepository
 
     public override async Task<Product> AddAsync(Product entity)
     {
-        // Generate unique ProductId before adding using distributed-safe sequence
         if (entity.ProductId == 0)
         {
             entity.ProductId = await GenerateNextProductIdAsync();

@@ -14,7 +14,7 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
 
         builder.Property(p => p.ProductId)
             .IsRequired()
-            .ValueGeneratedNever(); // We'll generate this manually
+            .ValueGeneratedNever();
 
         builder.Property(p => p.Name)
             .IsRequired()

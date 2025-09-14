@@ -91,7 +91,6 @@ public class ProductService : IProductService
         {
             _logger.LogInformation("Creating new product: {ProductName}", product.Name);
             
-            // Validate business rules
             if (string.IsNullOrWhiteSpace(product.Name))
                 throw new ArgumentException("Product name is required");
             
@@ -126,7 +125,6 @@ public class ProductService : IProductService
                 return null;
             }
 
-            // Validate business rules
             if (string.IsNullOrWhiteSpace(product.Name))
                 throw new ArgumentException("Product name is required");
             
@@ -136,7 +134,6 @@ public class ProductService : IProductService
             if (product.StockAvailable < 0)
                 throw new ArgumentException("Stock available cannot be negative");
 
-            // Update properties
             existingProduct.Name = product.Name;
             existingProduct.Description = product.Description;
             existingProduct.Price = product.Price;

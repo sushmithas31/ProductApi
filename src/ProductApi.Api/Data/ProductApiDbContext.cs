@@ -15,12 +15,10 @@ public class ProductApiDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        // Create SQL Server sequence for distributed-safe ProductId generation
         modelBuilder.HasSequence<int>("ProductIdSequence")
             .StartsAt(100001)
             .IncrementsBy(1);
 
-        // Apply configurations
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(ProductApiDbContext).Assembly);
     }
 }

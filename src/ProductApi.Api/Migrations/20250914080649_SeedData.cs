@@ -10,7 +10,6 @@ namespace ProductApi.Api.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            // Insert seed data using the ProductIdSequence for distributed-safe IDs
             migrationBuilder.Sql(@"
                 INSERT INTO Products (ProductId, Name, Description, Price, StockAvailable, Category, CreatedAt, UpdatedAt)
                 VALUES 
@@ -30,7 +29,6 @@ namespace ProductApi.Api.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            // Remove seed data
             migrationBuilder.Sql("DELETE FROM Products WHERE ProductId BETWEEN 100001 AND 100010");
         }
     }

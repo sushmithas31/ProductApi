@@ -73,7 +73,6 @@ builder.Services.ConfigureHttpJsonOptions(options =>
 
 var app = builder.Build();
 
-// Simple Database Setup
 await SetupDatabase(connectionString);
 
 app.UseGlobalExceptionHandling();
@@ -224,14 +223,7 @@ static async Task SeedSampleProducts(ProductApiDbContext context)
         {
             new { Name = "iPhone 15 Pro", Description = "Latest Apple smartphone with A17 Pro chip", Price = 999.99m, Stock = 50, Category = "Electronics" },
             new { Name = "MacBook Pro 16\"", Description = "Powerful laptop for professionals with M3 chip", Price = 2499.99m, Stock = 25, Category = "Electronics" },
-            new { Name = "AirPods Pro", Description = "Wireless earbuds with active noise cancellation", Price = 249.99m, Stock = 100, Category = "Electronics" },
-            new { Name = "Office Chair Pro", Description = "Ergonomic office chair with lumbar support", Price = 299.99m, Stock = 30, Category = "Furniture" },
-            new { Name = "Standing Desk", Description = "Height adjustable standing desk", Price = 599.99m, Stock = 15, Category = "Furniture" },
-            new { Name = "Gaming Mouse", Description = "High-precision gaming mouse with RGB lighting", Price = 79.99m, Stock = 75, Category = "Gaming" },
-            new { Name = "Mechanical Keyboard", Description = "Cherry MX switches mechanical keyboard", Price = 149.99m, Stock = 40, Category = "Gaming" },
-            new { Name = "Coffee Maker", Description = "Programmable drip coffee maker", Price = 89.99m, Stock = 60, Category = "Appliances" },
-            new { Name = "Blender Pro", Description = "High-speed blender for smoothies and soups", Price = 199.99m, Stock = 35, Category = "Appliances" },
-            new { Name = "Yoga Mat", Description = "Non-slip yoga mat with carrying strap", Price = 29.99m, Stock = 80, Category = "Fitness" }
+            new { Name = "AirPods Pro", Description = "Wireless earbuds with active noise cancellation", Price = 249.99m, Stock = 100, Category = "Electronics" }
         };
 
         var connection = context.Database.GetDbConnection();
@@ -242,7 +234,6 @@ static async Task SeedSampleProducts(ProductApiDbContext context)
 
         foreach (var productData in sampleProductsData)
         {
-            // Generate next ID using sequence
             using var command = connection.CreateCommand();
             command.CommandText = "SELECT NEXT VALUE FOR ProductIdSequence";
             var nextId = Convert.ToInt32(await command.ExecuteScalarAsync());

@@ -56,10 +56,8 @@ public class GlobalExceptionHandlingMiddleware
             Instance = context.Request.Path
         };
 
-        // Add trace ID for debugging
         problemDetails.Extensions.Add("traceId", context.TraceIdentifier);
 
-        // Add timestamp
         problemDetails.Extensions.Add("timestamp", DateTime.UtcNow);
 
         return problemDetails;

@@ -19,7 +19,6 @@ public class ProductIdGeneratorService : IProductIdGeneratorService
     {
         try
         {
-            // Use raw database connection to avoid EF limitations with sequences
             var connection = _context.Database.GetDbConnection();
 
             if (connection.State != System.Data.ConnectionState.Open)
