@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ProductApi.Api</name>
+    </assembly>
+    <members>
+        <member name="M:ProductApi.Api.Controllers.ProductsController.GetAllProducts">
+            <summary>
+            Get all products
+            </summary>
+            <returns>List of all products with stock information</returns>
+        </member>
+        <member name="M:ProductApi.Api.Controllers.ProductsController.GetProductById(System.Int32)">
+            <summary>
+            Get product by ID
+            </summary>
+            <param name="id">Product ID</param>
+            <returns>Product with stock information</returns>
+        </member>
+        <member name="M:ProductApi.Api.Controllers.ProductsController.CreateProduct(ProductApi.Api.DTOs.Requests.CreateProductRequest)">
+            <summary>
+            Create a new product
+            </summary>
+            <param name="request">Product creation request</param>
+            <returns>Created product with generated ID</returns>
+        </member>
+        <member name="M:ProductApi.Api.Controllers.ProductsController.UpdateProduct(System.Int32,ProductApi.Api.DTOs.Requests.UpdateProductRequest)">
+            <summary>
+            Update an existing product
+            </summary>
+            <param name="id">Product ID</param>
+            <param name="request">Product update request</param>
+            <returns>Updated product</returns>
+        </member>
+        <member name="M:ProductApi.Api.Controllers.ProductsController.DeleteProduct(System.Int32)">
+            <summary>
+            Delete a product
+            </summary>
+            <param name="id">Product ID</param>
+            <returns>No content if successful</returns>
+        </member>
+        <member name="M:ProductApi.Api.Controllers.ProductsController.DecrementStock(System.Int32,System.Int32)">
+            <summary>
+            Decrement product stock
+            </summary>
+            <param name="id">Product ID</param>
+            <param name="quantity">Quantity to decrement</param>
+            <returns>Updated product with new stock level</returns>
+        </member>
+        <member name="M:ProductApi.Api.Controllers.ProductsController.AddToStock(System.Int32,System.Int32)">
+            <summary>
+            Add to product stock
+            </summary>
+            <param name="id">Product ID</param>
+            <param name="quantity">Quantity to add</param>
+            <returns>Updated product with new stock level</returns>
+        </member>
+        <member name="M:ProductApi.Api.Controllers.ProductsController.GetProductsByCategory(System.String)">
+            <summary>
+            Get products by category
+            </summary>
+            <param name="category">Product category</param>
+            <returns>List of products in the specified category</returns>
+        </member>
+        <member name="M:ProductApi.Api.Controllers.ProductsController.GetProductsWithStock">
+            <summary>
+            Get products with available stock
+            </summary>
+            <returns>List of products with stock greater than zero</returns>
+        </member>
+        <member name="M:ProductApi.Api.Controllers.ProductsController.GetProductsWithLowStock(System.Int32)">
+            <summary>
+            Get products with low stock
+            </summary>
+            <param name="threshold">Stock threshold (default: 10)</param>
+            <returns>List of products with stock below or equal to threshold</returns>
+        </member>
+        <member name="T:ProductApi.Api.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:ProductApi.Api.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ProductApi.Api.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ProductApi.Api.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:ProductApi.Api.Migrations.SeedData">
+            <inheritdoc />
+        </member>
+        <member name="M:ProductApi.Api.Migrations.SeedData.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ProductApi.Api.Migrations.SeedData.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ProductApi.Api.Migrations.SeedData.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
